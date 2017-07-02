@@ -1,11 +1,11 @@
 # 1. Merge the training and the test sets to create one data set.
-
+setwd('C:/Users/Meuh/Desktop/Datos/R/Progam 4/Program 4/UCI HAR Dataset')
 # Read in the data from files
-features     <- read.table('./features.txt',header=FALSE)
-activityType <- read.table('./activity_labels.txt',header=FALSE)
-subjectTrain <- read.table('./train/subject_train.txt',header=FALSE)
-xTrain       <- read.table('./train/x_train.txt',header=FALSE)
-yTrain       <- read.table('./train/y_train.txt',header=FALSE)
+features     <- read.table('./features.txt')
+activityType <- read.table('./activity_labels.txt')
+subjectTrain <- read.table('./train/subject_train.txt')
+xTrain       <- read.table('./train/x_train.txt')
+yTrain       <- read.table('./train/y_train.txt')
 
 # Assigin column names to the data imported above
 colnames(activityType)  <- c('activityId','activityType')
@@ -17,9 +17,9 @@ colnames(yTrain)        <- "activityId"
 trainingData <- cbind(yTrain,subjectTrain,xTrain)
 
 # Read in the test data
-subjectTest <- read.table('./test/subject_test.txt',header=FALSE)
-xTest       <- read.table('./test/x_test.txt',header=FALSE)
-yTest       <- read.table('./test/y_test.txt',header=FALSE)
+subjectTest <- read.table('./test/subject_test.txt')
+xTest       <- read.table('./test/x_test.txt')
+yTest       <- read.table('./test/y_test.txt')
 
 # Assign column names to the test data imported above
 colnames(subjectTest) <- "subjectId"
